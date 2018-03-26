@@ -120,7 +120,7 @@
         left: null,
         mdp: false,
         rooms: null,
-        currentUsername: this.$store.state.user.username, 
+        currentUsername: this.$store.state.user.username,
         currentCoins: this.$store.state.user.coins
       }
     },
