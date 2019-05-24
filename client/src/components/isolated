@@ -1,0 +1,78 @@
+<v-content class="mt-5">
+  <v-container fluid grid-list-sm>
+    <v-flex row wrap>
+    <v-flex class="elevation-2 mb-4">
+         Ingrédients
+       </v-flex>
+       <v-select
+    v-model="recipe.ingredients"
+    label="Ajouter un ingrédient"
+    chips
+    tags
+    solo
+    prepend-icon=""
+    append-icon=""
+    clearable
+  >
+    <template slot="selection" slot-scope="data">
+      <v-chip
+        :selected="data.selected"
+        close
+        @input="remove(data.item)"
+      >
+        <strong>{{ data.item }}</strong>&nbsp;
+      </v-chip>
+    </template>
+  </v-select>
+  <v-btn flat color="success" class="mt-5" @click="recipe.etapes++"><v-icon>add</v-icon>Ajouter une étape</v-btn>
+     <v-expansion-panel focusable popout class="mt-5 elevation-3" v-model="recipe.etapes">
+    <v-expansion-panel-content v-for="(item,i) in recipe.etapes" :key="i">
+      <div color="purple" slot="header"> <v-btn flat @click="recipe.etapes--"><v-icon color="red">delete_forever</v-icon></v-btn>Etape {{ i + 1 }}</div>
+      <v-card>
+        <v-text-field v-model="recipe.description" multi-line label="Décrivez l'étape ici"></v-text-field>
+      </v-card>
+    </v-expansion-panel-content>
+  </v-expansion-panel>
+     <v-layout row wrap class="pt-3">
+       <v-flex class="elevation-2">
+         TEXT
+       </v-flex>
+       <v-flex class="elevation-2">
+         TEXT
+       </v-flex>
+     </v-layout>
+     </v-flex>
+   </v-container>
+  <v-container fluid>
+     <v-layout align-center justify-center>
+       <v-flex xs12 sm12 md12 lg12>
+         <v-card class="elevation-10">
+           <v-toolbar flat dense class="purple darken-4" dark height="75px">
+                  <v-toolbar-title>
+                    <h3 class="headline mb-0"><v-text-field label="Titre de la Recette" v-model="recipe.title"></v-text-field></h3>
+                  </v-toolbar-title>
+                </v-toolbar>
+              <v-container>
+              <v-flex xs12>  
+            <v-flex xs12 md12 lg12 class="">
+               <v-card-media height="100px">
+                   <v-text-field required v-model="recipe.image" label="Url de l'image"></v-text-field>
+               </v-card-media>
+               <v-flex>
+             <v-card-text>
+               <v-select v-model="recipe.difficulty" label="Difficulté" required :items="[1, 2, 3, 4, 5]"></v-select>
+             </v-card-text>
+             </v-flex>
+             <v-card-text>
+            <v-select v-model="recipe.category" label="Catégorie" required :items="['Végétarien', 'Dessert', 'Plat', 'Boisson', 'Entrée',]"></v-select>
+             </v-card-text>
+            </v-flex>
+           </v-flex>
+        </v-container>
+      </v-card>
+    </v-flex>
+   </v-layout>
+    <v-btn block color="success" @click="create"> Créer <v-icon>done</v-icon></v-btn>
+  </v-container>
+  
+  </v-content>

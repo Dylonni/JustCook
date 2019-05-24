@@ -2,7 +2,7 @@
 <v-layout  column fluid justify-center>
   <v-flex xs3>
 <v-alert outline color="error" icon="warning" :value="true">
-      Vous devez être connecté pour voir les rooms.
+      Vous devez être connecté pour créer une recette
     </v-alert>
     </v-flex>
     </v-layout>

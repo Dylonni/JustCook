@@ -5,7 +5,9 @@
       <page-header></page-header>
         <main>
           <v-container>
+            <transition name="fade" mode="out-in">
             <router-view/>
+            </transition>
           </v-container>
        </main>
    <page-footer></page-footer>
@@ -14,7 +16,6 @@
 
 <script>
 import PageHeader from '@/components/Header.vue'
-import AlertPage from '@/components/Alert.vue'
 import PageFooter from '@/components/Footer.vue'
 
 export default {
@@ -26,7 +27,6 @@ export default {
   },
   components: {
     PageHeader,
-    AlertPage,
     PageFooter
   },
 
@@ -45,4 +45,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+
+  .fade-enter-active, .fade-leave-active {
+        transition-property: opacity;
+        transition-duration: 0.25s;
+    }
+
+
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
+
 </style>

@@ -1,7 +1,6 @@
 const AuthenticationController = require('./controllers/AuthenticationController')
-
 const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy')
-const RoomController = require('./controllers/RoomController')
+const RecipeController = require('./controllers/RecipeController')
 
 module.exports = (app) => {
   app.post('/register',
@@ -11,8 +10,10 @@ module.exports = (app) => {
   app.post('/login',
     AuthenticationController.login)
 
-  app.get('/rooms',
-    RoomController.index)
-  app.post('/rooms',
-    RoomController.post)
+  app.get('/recipes',
+    RecipeController.index)
+  app.get('/recipes/:recipeId',
+    RecipeController.show)
+  app.post('/recipes',
+    RecipeController.post)
 }

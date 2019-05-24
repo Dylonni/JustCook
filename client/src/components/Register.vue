@@ -1,13 +1,12 @@
 <template>
-<transition name="fade">
   <v-layout fluid justify-center>
-    <v-flex xs3 >
+    <v-flex xs12 lg6>
       <div class="white elevation-2">
-        <v-toolbar flat dense class="amber darken-1" dark>
+        <v-toolbar flat dense class="purple lighten-1" dark>
           <v-toolbar-title>Inscription</v-toolbar-title>
         </v-toolbar>
           <div class="pl-4 pr-4 pt-2 pb-2">
-            <form name="american-height-form"
+            <form name="mericook-form"
               autocomplete="off">
               <v-text-field
               label="Votre pseudo"
@@ -28,12 +27,11 @@
             <div class="error" v-html="error"></div>
             <br>
             <v-spacer></v-spacer>
-            <v-btn class="amber darken-2" dark @click="register">S'inscrire</v-btn>
+            <v-btn class="purple lighten-2" dark @click="register">S'inscrire</v-btn>
           </div>
       </div>
     </v-flex>
   </v-layout>
-  </transition>
 </template>
 
 <script>
@@ -44,8 +42,6 @@ export default {
       email: '',
       password: '',
       username: '',
-      coins: 0,
-      profileimage: 'https://www.nautiljon.com/images/recettes/00/29/takoyaki_192.jpg?1284548632',
       error: null
     }
   },
@@ -55,14 +51,14 @@ export default {
         const response = await AuthentificationService.register({
           email: this.email,
           password: this.password,
-          username: this.username,
-          profileimage: this.profileimage,
-          coins: this.coins
+          username: this.username
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$session.start()
+        this.$session.set('token', response.data.token)
         this.$router.push({
-          name: 'login'
+          name: 'lobby'
         })
       } catch (error) {
         this.error = error.response.data.error
@@ -76,20 +72,6 @@ export default {
 <style scoped>
 .error {
   color: white;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition-property: opacity;
-  transition-duration: 0.7s;
-}
-
-.fade-enter-active {
-  transition-delay: 0.5s;
-}
-
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
 }
 
 .mericorn {

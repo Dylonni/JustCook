@@ -20,29 +20,30 @@ module.exports = {
       })
     } catch (err) {
       res.status(400).send({
-        error: 'Email déja utilisé.'
+        error: 'Email ou Pseudo déjà utilisé.'
       })
     }
   },
   async login (req, res) {
     try {
-      const {email, password} = req.body
+      const {email, username, password} = req.body
       const user = await User.findOne({
         where: {
-          email: email
+          email: email,
+          username: username
         }
       })
 
       if (!user) {
         return res.status(403).send({
-          error: 'Identifiant ou mot de passe incorrects.'
+          error: 'Identifiants ou mot de passe incorrects.'
         })
       }
 
       const isPasswordValid = await user.comparePassword(password)
       if (!isPasswordValid) {
         return res.status(403).send({
-          error: 'Identifiant ou mot de passe incorrects.'
+          error: 'Identifiants ou mot de passe incorrects.'
         })
       }
 

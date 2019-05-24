@@ -1,9 +1,8 @@
 <template>
-<transition name="fade">
-  <v-layout fluid fill-height>
-     <v-flex xs12 sm8 md6>
-      <div class="white elevation-2">
-        <v-toolbar flat dense class="amber darken-1" dark>
+  <v-layout fluid justify-center>
+     <v-flex xs12 sm8 md6 lg6>
+       <div class="white elevation-2">
+        <v-toolbar flat dense class="purple darken-4" dark>
           <v-toolbar-title>Se Connecter</v-toolbar-title>
         </v-toolbar>
           <div class="pl-4 pr-4 pt-2 pb-2">
@@ -23,21 +22,14 @@
             <br>
             <div class="error" v-html="error"></div>
             <br>
-            <v-btn class="amber darken-1 mb-5" dark @click="login">Connexion</v-btn>
+            <v-btn class="purple darken-4 mb-5" dark @click="login">Connexion</v-btn>
             <v-spacer></v-spacer>
            <span> Pas de compte ?</span>
-            <router-link to="/register" tag="button"><span class="zoeischeat">S'inscrire</span></router-link>
-          </div>
+            <router-link to="/register" tag="button"><span class="vert">S'inscrire</span></router-link>
+      </div>
       </div>
     </v-flex>
-    <v-layout justify-center>
-    <v-flex >
-    <img class="mericorn" src="../assets/img/logo8A.png" alt="">
-    <h1 class="hacheun">Don’t get lost in the shuffle!</h1>
-    </v-flex>
-    </v-layout>
   </v-layout>
-  </transition>
 </template>
 
 <script>
@@ -86,21 +78,9 @@ export default {
 .error {
   color: white;
 }
-.zoeischeat{
+.vert{
   color: green;
 }
-  .fade-enter-active, .fade-leave-active {
-        transition-property: opacity;
-        transition-duration: 0.7s;
-    }
-
-    .fade-enter-active {
-        transition-delay: 0.50s;
-    }
-
-    .fade-enter, .fade-leave-active {
-        opacity: 0
-    }
     .mericorn {
       height: 320px;
       width: 235px;

@@ -21,7 +21,6 @@ export default new Vuex.Store({
   state: {
     token: null,
     user: null,
-    room: null,
     isUserLoggedIn: false,
     isDarkMode: false
   },
@@ -33,30 +32,33 @@ export default new Vuex.Store({
     setUser (state, user) {
       state.user = user
     },
-    setRoom (state, room) {
-      state.room = room
+    setRecipe (state, recipe) {
+      state.recipe = recipe
     },
     setDark (state, isDarkMode) {
       state.isDarkMode = isDarkMode
     }
   },
   actions: {
-    setToken ({ commit }, token) {
+    setToken ({commit}, token) {
       commit('setToken', token)
     },
-    setUser ({ commit }, user) {
+    setUser ({commit}, user) {
       commit('setUser', user)
     },
-    setDark ({ commit }, isDarkMode) {
+    setDark ({commit}, isDarkMode) {
       commit('setDark', isDarkMode)
     },
-    setRoom ({ commit }, room) {
-      commit('setRoom', room)
+    setRecipe ({commit}, recipe) {
+      commit('setRecipe', recipe)
     }
   },
   getters: {
     isDark: state => {
       return state.isDarkMode
+    },
+    user (state) {
+      return state.user
     }
   }
 })

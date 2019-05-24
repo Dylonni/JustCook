@@ -1,0 +1,32 @@
+[
+  {
+      "title": "Crêpes",
+      "description": "Delicieuses crêpes bretonnes facile à faire !!",
+      "ingredients": "",
+      "etapes": 6,
+      "category": "Dessert",
+      "image": "https://www.tefal.fr/medias/?context=bWFzdGVyfHJvb3R8MjIzMzJ8aW1hZ2UvanBlZ3xoZGUvaDAwLzEyMzQyNTI4NTQwNzAyLmpwZ3xmMDMwNDUyNDFiMzIzYWQ4OTc1ZmY3OGVhYmY3NDZhYTEzNGE4YjdlNGZkMmJlNGM4YzA3YmE1MTVmY2VlYTI2",
+      "difficulty": 4
+    
+  },
+  {
+    "title": "Pizza Peperonni",
+    "description": "Pizza classique aux peperonnis",
+    "ingredients": "",
+    "etapes": 4,
+    "category": "Plat",
+    "image": "http://biarritz-pizza.fr/img-customer/configuration/5877a032cc3e8.35a3aaeb662bfd222e72443b23bd530b.jpeg",
+    "difficulty": 2
+  
+  },
+  {
+    "title": "Risotto Saumon",
+    "description": "Délicieux risotto au saumon pour changer !",
+    "ingredients": "",
+    "etapes": 8,
+    "category": "Plat",
+    "image": "http://img-3.journaldesfemmes.fr/E7H1kC3dDJaPWwM1EJ5tdw_6z0o=/750x/smart/0c70d5efe9624b99b5de73fa59d73727/recipe-jdf/331010.jpg",
+    "difficulty": 5
+  
+  }
+]

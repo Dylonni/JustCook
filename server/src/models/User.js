@@ -22,8 +22,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true
     },
-    profileimage: DataTypes.STRING,
-    coins: DataTypes.BIGINT,
     email: {
       type: DataTypes.STRING,
       unique: true
