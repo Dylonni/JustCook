@@ -20,3 +20,9 @@ npm run dev
 ```
 
 ## You can now connect to localhost:8080 on your web browser to try the app
+
+
+### You can also inject placeholder recipes by opening a third shell , going to server and run the seed
+```
+npm run seed
+```
