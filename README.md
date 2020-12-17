@@ -1,3 +1,4 @@
+![alt text](https://github.com/DylanAumis/JustCook/blob/master/client/src/assets/img/Screenshot6.png?raw=true)
 # JustCook
 Vuejs tool to make cooking recipes
 
